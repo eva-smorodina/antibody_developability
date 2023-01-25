@@ -52,4 +52,5 @@ for n, (f, r) in enumerate(zip(files, results)):
     d_protint[name] = r
     
 df = pd.DataFrame(d_protint.values(), index=d_protint.keys())
+df.insert(0, 'ID', [s for s in d_protint.keys()])
 df.to_csv('./sens_arpeggio_int.csv', index=None)
